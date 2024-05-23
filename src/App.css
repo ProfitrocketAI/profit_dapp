@@ -1,31 +1,10 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  height: 50px; /* Shrink the logo */
+  width: auto;  /* Maintain aspect ratio */
+  animation: App-logo-spin infinite 20s linear; /* Apply spinning animation */
+  position: absolute; /* Position it absolutely within the header */
+  left: 20px; /* Move it to the left with some padding */
+  top: 20px; /* Align it vertically with some padding */
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +14,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-header {
+  background-color: #282c34; /* Dark blue */
+  height: 100px; /* Set the height to a fixed value */
+  padding: 20px; /* Add some padding */
+  color: white; /* White text color */
+
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out items horizontally */
+  font-size: calc(10px + 2vmin);
+  position: relative; /* Ensure the header can contain absolutely positioned elements */
+  margin-bottom: 20px; /* Add space below the header */
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  font-weight: 600; /* Make the font bold */
+  font-size: 2.5em; /* Increase the font size */
+  color: #ff69b4; /* Pink color to match the theme */
+  margin: 0; /* Remove default margin */
+  margin-left: 80px; /* Adjust margin to avoid overlap with the logo */
+}
+
+#login-button {
+  font-size: 1rem; /* Adjust font size */
+  padding: 0.5rem 1rem; /* Adjust padding for a smaller button */
+  border-radius: 10px; /* Round the corners */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add transitions for hover effects */
+}
+
+#login-button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
 }
