@@ -50,3 +50,31 @@ h1 {
   transform: scale(1.05); /* Slightly enlarge on hover */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
 }
+
+.shadow-animated {
+  animation: colorShift 5s infinite;
+  border-radius: 18px;
+  box-shadow: 0 0 5px 1px #FF7F00;
+}
+
+@keyframes colorShift {
+  0% {
+    box-shadow: 0 0 5px 1px #FF7F00;
+  }
+  20% {
+    box-shadow: 0 0 5px 1px #FFFF00;
+  }
+  40% {
+    box-shadow: 0 0 5px 1px #00FF00;
+  }
+  60% {
+    box-shadow: 0 0 5px 1px #00FFFF;
+  }
+  80% {
+    box-shadow: 0 0 5px 1px #0000FF;
+  }
+  100% {
+    box-shadow: 0 0 5px 1px #8B00FF;
+  }
+}
+
