@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import Dashboard from "./components/Dashboard";
-import InvestmentPool from "./components/InvestmentPool";
-import Staking from "./components/Staking";
-import AIHubMetrics from "./components/AIHubMetrics";
-import ProposalsVoting from "./components/ProposalsVoting";
-import SubmitAIAgent from "./components/SubmitAIAgent";
-import ReinvestmentStatistics from "./components/ReinvestmentStatistics";
+import Sidebar from "./Sidebar";
+import Dashboard from "./Dashboard";
+import InvestmentPool from "./InvestmentPool";
+import Staking from "./Staking";
+import AIHubMetrics from "./AIHubMetrics";
+import ProposalsVoting from "./ProposalsVoting";
+import SubmitAIAgent from "./SubmitAIAgent";
+import ReinvestmentStatistics from "./ReinvestmentStatistics";
 
 export default function Widget() {
   const [currentTab, setCurrentTab] = useState("dashboard");

@@ -1,6 +1,55 @@
 import React from "react";
+import { Line, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-function Dashboard({ setCurrentTab }) {
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const Dashboard = ({ setCurrentTab }) => {
+  const lineData = {
+    labels: ["January", "February", "March", "April", "May", "June"],
+    datasets: [
+      {
+        label: "Investment Growth",
+        data: [65, 59, 80, 81, 56, 55],
+        fill: false,
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)",
+      },
+    ],
+  };
+
+  const barData = {
+    labels: ["January", "February", "March", "April", "May", "June"],
+    datasets: [
+      {
+        label: "Staking Rewards",
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
   return (
     <div className="p-4">
       <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
@@ -122,8 +171,25 @@ function Dashboard({ setCurrentTab }) {
           </button>
         </div>
       </div>
+
+      {/* Graphs */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-zinc-900 p-4 rounded-[18px] shadow-animated">
+          <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+            Investment Growth
+          </h3>
+          <Line data={lineData} />
+        </div>
+
+        <div className="bg-zinc-900 p-4 rounded-[18px] shadow-animated">
+          <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+            Staking Rewards
+          </h3>
+          <Bar data={barData} />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
